@@ -7,6 +7,7 @@
 Planet earth;                                        // instance of class Planet called 'earth'
 Planet sun;                                          // instance of class Planet called 'sun'
 
+
 ArrayList<Meteor> mets;                              // defining an ArrayList with 'Meteor' objects in it called 'mets'
 
 void setup() {                                       // creating the setup function, nothing returned
@@ -26,6 +27,7 @@ void setup() {                                       // creating the setup funct
   sun.dx = sun.dy = 5;                               // set dx & dy variables for Sun instance
 
   mets = new ArrayList<Meteor>();                    // defining variable 'mets' as a new array list with 'Meteor' objects in it
+
 }                                                    // end setup
 
 void draw() {                                        // creating a draw function, nothing returned
@@ -35,17 +37,43 @@ void draw() {                                        // creating a draw function
   earth.drawPlanet();                                // pass values set for 'earth' instance to drawPlanet function
 
   for ( Meteor met : mets) {                         // for loop that steps through an array. Here it assigns object 'Meteor' the variable name 'met' and fills it with array 'mets'
+ 
     met.drawPlanet();                                // execute 'drawPlanet' function with 'met' data
-  }                                                  // end for loop
+    println(met);
+}                                                    // end for loop
+  
+  
+
+
+
+
+
+
+
 }                                                    // end draw
 
 void mouseClicked() {                                // calling the mouseClicked function, nothing returned
   mets.add( new Meteor() );                          // adds new object 'Meteor' to the array 'mets'
 }
 
-void keyPressed() {                                  // Method that looks for when a key is pressed
-  if ( !mets.isEmpty() ) {                           // if the array 'mets' is NOT (!) empty then. . .
-    mets.remove(0);                                  // remove the first element in the 'mets array'
-  }                                                  // end if
+void keyPressed() {                                          // Method that looks for when a key is pressed
+  if ((key == 'x' || key == 'X') && ( !mets.isEmpty() )) {     // if the key is X or x AND array 'mets' is NOT (!) empty then. . .
+    mets.remove(0);                                          // remove the first element in the 'mets array'
+
+  }                                                          // end if
+
+  if (key == 'b' || key == 'B') {
+  make most recent instance of Meteor's followMouse = true;
+
+  }
+    
+  if (key == 'n' || key == 'N') {
+  make most recent instance of Meteor's followMouse = false;
+  }
+    
+
+
 }                                                    // end keyPressed method
+
+
 

@@ -4,6 +4,7 @@ public class Planet{                                                  // declare
   int mySize;                                                         // declare integer variable called 'mySize'
   int dx, dy;                                                         // declare integer variables called 'dx' & 'dy'
   String name;                                                        // declare string variable called 'name'
+
   
   public Planet(){                                                    // create function called 'Planet', not passed any values
     println("making an planet");                                      // print 'making an planet' which is technically not correct English
@@ -53,6 +54,8 @@ public class Meteor extends Planet {                                  // declare
   }                                                                   // end method 'Meteor'
   
   void drawPlanet(){                                                  // create 'drawPlanet' function, returning nothing
+  
+//    println ("I do you");
     if ( followMouse ) {                                              // if boolean 'followMouse' is true then
       fill(myColor);                                                  // set fill as 'myColor'
       loc[0] = mouseX;                                                // set 'loc[0]' as value of mouseX
